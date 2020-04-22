@@ -1,5 +1,8 @@
-#include <iostream>
+#pragma once
+#include "RandomTextGenerator.h"
 
-int main() {
-	std::cout << "Hello World!" << std::endl;
+int main(int argc, char* argv[]) {
+	RandomTextGenerator rtm("Test.txt");
+
+	rtm.randomFile(500, RandomTextGenerator::LetterRange::alpha);
 }

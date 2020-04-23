@@ -1,19 +1,26 @@
 #include "RandomTextGenerator.h"
 #include <iostream>
 
+#include "Instrumenter.h"
+
 RandomTextGenerator::RandomTextGenerator() 
 {
-
 }
 
 RandomTextGenerator::RandomTextGenerator(const std::string& filename) 
 	: m_filename(filename)
 {
 
+	BEGIN_PROFILING("RandomTextGenerator");
+}
+
+RandomTextGenerator::~RandomTextGenerator() {
+	END_PROFILING;
 }
 
 void RandomTextGenerator::randomFile(int letterCount, LetterRange lr) 
 {	
+	PROFILE_FUNCTION;
 	std::ofstream file;
 	
 	if (m_filename.empty()) {
@@ -34,6 +41,7 @@ std::vector<char> getCharacterPool(RandomTextGenerator::LetterRange lr);
 
 std::string RandomTextGenerator::randomString(int letterCount, LetterRange lr) 
 {
+	PROFILE_FUNCTION;
 	std::vector<char> characterPool = getCharacterPool(lr);
 	srand(time(NULL));
 
@@ -51,6 +59,7 @@ std::string RandomTextGenerator::randomString(int letterCount, LetterRange lr)
 
 std::vector<char> getCharacterPool(RandomTextGenerator::LetterRange lr)
 {
+	PROFILE_FUNCTION;
 	std::vector<char> characterPool;
 	switch (lr) {
 	case RandomTextGenerator::alpha:
@@ -84,5 +93,6 @@ std::vector<char> getCharacterPool(RandomTextGenerator::LetterRange lr)
 
 void RandomTextGenerator::setFilename(const std::string& filename) 
 {
+	PROFILE_FUNCTION;
 	m_filename = filename;
 }

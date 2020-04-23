@@ -150,7 +150,14 @@
     <ClCompile Include="src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Instrumenter.h" />
     <ClInclude Include="src\RandomTextGenerator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="results.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

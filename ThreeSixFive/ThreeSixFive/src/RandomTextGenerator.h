@@ -18,6 +18,8 @@ public:
 	RandomTextGenerator();
 	RandomTextGenerator(const std::string& filename);
 
+	~RandomTextGenerator();
+
 	void randomFile(int letterCount, LetterRange lr);
 	std::string randomString(int letterCount, LetterRange lr);
 

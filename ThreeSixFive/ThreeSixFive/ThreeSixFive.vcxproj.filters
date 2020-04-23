@@ -8,10 +8,4 @@
     <ClInclude Include="src\RandomTextGenerator.h" />
     <ClInclude Include="src\Instrumenter.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Test.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="results.json" />
-  </ItemGroup>
 </Project>
